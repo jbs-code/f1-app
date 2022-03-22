@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 function useFetchDriverStandings(season = 'current') {
     const [data, setData] = useState(null);
-    const url = `http://ergast.com/api/f1/${season}/driverStandings.json`;
+    const url = `https://ergast.com/api/f1/${season}/driverStandings.json`;
 
     useEffect(() => {
         fetch(url)

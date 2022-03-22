@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 function useFetchSeason() {
     const [season, setSeason] = useState(null);
-    const url = 'http://ergast.com/api/f1/seasons.json?limit=500';
+    const url = 'https://ergast.com/api/f1/seasons.json?limit=500';
 
     useEffect(() => {
         fetch(url)
