@@ -10,7 +10,7 @@ function ChampConstructors() {
 
   const url = `https://ergast.com/api/f1/${season}/constructorStandings.json`;
   const data = useFetch(url);
-  const constructors = data?.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+  const constructors = data?.MRData.StandingsTable.StandingsLists[0]?.ConstructorStandings;
 
   const getSeason = (e) => {
     setSeason(e.target.innerText);
@@ -26,6 +26,10 @@ function ChampConstructors() {
 
       {
         !data && <h1 className='msg-buscando text-shadow'>Buscando...</h1>
+      }
+
+      {
+        (season < 1958) && <h1 className='msg-buscando text-shadow'>No hay información de este año.</h1>
       }
       <table className="tableDriverStandings">
         <tbody>
