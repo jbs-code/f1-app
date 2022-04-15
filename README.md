@@ -7,6 +7,11 @@ campeonato de constructores.
 
 El proyecto está hecho con create-react-app, así que solo es necesario instalar los módulos de node que requiere la aplicación con "npm init".
 
+## Consideraciones 
+
+Para conseguir la información se utiliza una API llamada: [Ergast Developer API](http://ergast.com/mrd/)  .
+  
+  
 ![Imágen del proyecto](./public/f1-app.png)
 
 
