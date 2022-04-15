@@ -15,7 +15,7 @@ function RowDriverStandings({driver}) {
             <td >
                 {driver.points}
             </td>
-            <td >
+            <td className='row-wins'>
                 {driver.wins}
             </td>
         </tr>

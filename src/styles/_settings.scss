@@ -1,0 +1,34 @@
+$color-dark-blue: #0D7994;    
+$color-yellow: #E0CF14;
+$color-light-blue: #2ABBE1;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    position: relative;
+}
+
+.container-img__background{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+body{
+    background-color: $color-dark-blue;
+    font-family: 'Nunito', sans-serif;
+    background-image: url('../assets/pista.png' );
+}
+
+.text-shadow{
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+}

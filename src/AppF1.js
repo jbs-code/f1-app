@@ -1,8 +1,8 @@
-import DriverStandings from "./Components/DriverStandings";
+import {AppRouter} from "./routes/AppRouter";
 
 function AppF1() {
   return (
-      <DriverStandings/>
+      <AppRouter/>
   );
 }
 

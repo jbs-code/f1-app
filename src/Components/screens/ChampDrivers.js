@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
-import useFetchDriverStandings from '../hooks/useFetchDriverStandings';
-import RowDriverStandings from './RowDriverStandings';
-import SelectSeason from './SelectSeason';
+import React, { useState, useEffect } from 'react'
+import { gsapTable } from '../../helpers/gsapHelper';
+import useFetch from '../../hooks/useFetch';
+import RowDriverStandings from '../RowDriverStandings';
+import SelectSeason from '../SelectSeason';
 
-function DriverStandings() {
+function ChampDrivers() {
+    const [season, setSeason] = useState('current');
 
-    const [season, setSeason] = useState('current')
-    const driverStandings = useFetchDriverStandings(season);
+    const url = `https://ergast.com/api/f1/${season}/driverStandings.json`;
+    const data = useFetch(url);
+    const driverStandings = data?.MRData.StandingsTable.StandingsLists[0].DriverStandings;
 
     const getSeason = (e) => {
         setSeason(e.target.innerText);
     }
 
-    return (
-        <>
-        <header className="header"><h1>Campeonato de pilotos</h1></header>
-            
+    useEffect(() => {
+        gsapTable();
+      }, []);
 
+    return (
+        <div className='drivers'>
             <SelectSeason getSeason={getSeason} season={season} />
+
+            {
+                !data && <h1 className='msg-buscando text-shadow'>Buscando...</h1>
+            }
 
             <table className="tableDriverStandings">
                 <tbody>
                     <tr>
-                        <th>Posición</th>
-                        <th>Piloto</th>
-                        <th>Equipo</th>
-                        <th>Puntos</th>
-                        <th>Victorias</th>
+                        <th className='text-shadow'>Posición</th>
+                        <th className='text-shadow'>Piloto</th>
+                        <th className='text-shadow'>Equipo</th>
+                        <th className='text-shadow'>Puntos</th>
+                        <th className='text-shadow row-wins'>Victorias</th>
                     </tr>
                     {
                         driverStandings?.map(d =>
@@ -46,8 +54,8 @@ function DriverStandings() {
                     }
                 </tbody>
             </table>
-        </>
+        </div>
     );
 }
 
-export default DriverStandings
+export default ChampDrivers
