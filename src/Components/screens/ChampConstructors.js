@@ -8,7 +8,7 @@ import { gsapTable } from '../../helpers/gsapHelper';
 function ChampConstructors() {
   const [season, setSeason] = useState('current');
 
-  const url = `http://ergast.com/api/f1/${season}/constructorStandings.json`;
+  const url = `https://ergast.com/api/f1/${season}/constructorStandings.json`;
   const data = useFetch(url);
   const constructors = data?.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
 
