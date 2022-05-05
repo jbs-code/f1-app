@@ -5,7 +5,7 @@ campeonato de constructores.
 
 ## Run
 
-El proyecto está hecho con create-react-app, así que solo es necesario instalar los módulos de node que requiere la aplicación con "npm init".
+El proyecto está hecho con create-react-app, así que solo es necesario instalar los módulos de node que requiere la aplicación con "npm install".
 
 ## Consideraciones 
 
